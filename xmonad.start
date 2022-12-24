@@ -21,7 +21,7 @@ xsetroot -cursor_name left_ptr &
 
 # Set the background color<
 #xsetroot -solid midnightblue
-feh --bg-scale /home/eric/Documents/Art/ocean_park_114.jpg
+feh --bg-scale ~/Documents/Art/ocean_park_114.jpg
 
 xscreensaver &
 
