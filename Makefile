@@ -1,5 +1,5 @@
 .PHONY: install
-
+install: xmonad art startup
 
 xmonad:
 	ln -s .xmonad $(HOME)/.xmonad
@@ -29,4 +29,4 @@ rofi:
 	mkdir -p $(HOME)/.config
 	ln -s .config/rofi 	$(HOME)/.config/rofi
 
-all: xmonad art xsession polybar conky rofi startup
+all: xmonad art startup xsession polybar conky rofi
