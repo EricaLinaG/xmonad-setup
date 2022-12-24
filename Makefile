@@ -1,30 +1,32 @@
 .PHONY: install
 
-install:
-	cp -r .xmonad $(HOME)/
-	mkdir -p $(HOME)/bin
-	cp xmonad.start $(HOME)/bin/
+
+xmonad:
+	ln -s .xmonad $(HOME)/.xmonad
+	xmonad --recompile
+
+.PHONY: xsession
+art:
 	mkdir -p ~/Documents/Art
 	cp ocean_park_114.jpg ~/Documents/Art/
 
-.PHONY: xsession
 xsession:
 	sudo cp myXmonad.desktop /usr/share/xsessions/
 
 startup:
-	sudo cp .xinitrc $(HOME)/
-	sudo cp xmonad.start /usr/local/bin/
+	ln -s .xinitrc $(HOME)/.xinitrc
+	ln -s xmonad.start $(HOME)/xmonad.start
 
 polybar:
 	mkdir -p $(HOME)/.config
-	cp -r .config/polybar 	$(HOME)/.config/
+	ln -s .config/polybar 	$(HOME)/.config/polybar
 
 conky:
 	mkdir -p $(HOME)/.config
-	cp -r .config/conky 	$(HOME)/.config/
+	ln -s .config/conky 	$(HOME)/.config/conky
 
 rofi:
 	mkdir -p $(HOME)/.config
-	cp -r .config/rofi 	$(HOME)/.config/
+	ln -s .config/rofi 	$(HOME)/.config/rofi
 
-all: install xsession polybar conky rofi startup
+all: xmonad art xsession polybar conky rofi startup
