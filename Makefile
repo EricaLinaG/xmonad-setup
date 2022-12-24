@@ -5,11 +5,11 @@ xmonad:
 	ln -s .xmonad $(HOME)/.xmonad
 	xmonad --recompile
 
-.PHONY: xsession
 art:
 	mkdir -p ~/Documents/Art
 	cp ocean_park_114.jpg ~/Documents/Art/
 
+.PHONY: xsession
 xsession:
 	sudo cp myXmonad.desktop /usr/share/xsessions/
 
