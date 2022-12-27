@@ -33,6 +33,8 @@ rofi: config-dir
 
 config : config-dir polybar conky rofi
 
+links : xmonad-link startup config-dir polybar conky rofi
+
 clean-links:
 	rm -f $(HOME)/exwm.start
 	rm -f $(HOME)/xmonad.start
