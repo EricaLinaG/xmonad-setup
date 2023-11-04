@@ -525,15 +525,15 @@ scratchpads =
   , NS "ghci"  (myTerminal2 ++ " -e ghci") (title =? "ghci") (flexFloatBSP (6/20) (1/10))
   --, NS "sync"  (myTerminal ++ " -e sy") (title =? "sy") (flexFloatSP (1/10) (2/3))
   , NS "top"   (myTerminal2 ++ " -e htop") (title =? "htop") (flexFloatSSP (1/4) (1/4))
-  , NS "calc"  (myTerminal2 ++ " -e bcl -t bc") (title =? "bc") (flexFloatSSSP (1/4) (1/4))
-  , NS "alsaMixer"  (myTerminal2 ++ " -e alsamixer -t alsamixer") (title =? "alsamixer") (flexFloatSSSP (1/4) (1/4))
+  , NS "calc"  (myTerminal2 ++ " -e bcl") (title =? "bcl") (flexFloatSSP (1/4) (1/4))
+  , NS "alsaMixer"  (myTerminal2 ++ " -e alsamixer") (title =? "alsamixer") (flexFloatSSP (1/4) (1/4))
   ]
   where
     spawnConky  = "conky -c ~/.config/conky/Erics.conkyrc" -- launch Conky
     findConky   = title =? "system_conky"   -- its window,  has a own_window_title of "system_conky"
     manageConky = (flexFloatSSP (1/4) (1/4))
     spawnPavu  = "pavucontrol"
-    findPavu   = title =? "pavucontrol"
+    findPavu   = className =? "Pavucontrol"
     managePavu = (flexFloatSSP (1/4) (1/4))
 
 -- Scratchpad invocation / Dismissal
@@ -576,7 +576,7 @@ namedScratchpadsKeymap = -- Scratch Pads
     , ("c", scratchToggle "calc") -- calc
     , ("C", scratchToggle "conky") -- Conky
     , ("v", scratchToggle "pavuControl") -- Pavu Control
-    , ("m", scratchToggle "alsaMixer") -- Pavu Control
+    , ("m", scratchToggle "alsaMixer") -- Alsa Mixer
     , ("t", scratchToggle "top") -- htop
     , ("H", scratchToggle "htop") -- htop
     ]
@@ -633,7 +633,7 @@ myManageHelpers = composeAll . concat $
     , [ title       =? c --> doIgnore          | c <- titleIgnores]
     , [(className =? "Firefox" <&&> resource =? "Dialog") --> doFloat]
     ]
-  where classFloats    = ["Galculator", "Steam", "Media_Center_30", "YACReaderLibrary",
+  where classFloats    = ["Galculator", "Steam", "Media_Center_31", "YACReaderLibrary",
                           "MPlayer", "Gimp", "Gajim.py", "Xmessage"]
         titleFloats    = ["Volume Control", "alsamixer", "Onboard"]
         resourceFloats = ["desktop_window", "Dialog", "gpicview"]
@@ -1333,7 +1333,7 @@ mainKeymap c = mkKeymap c $ -- Main Keys
     , ("M4-M1-t", scratchToggle "top") -- top
     , ("M4-M1-s", scratchToggle "conky") -- Conky
     , ("M4-M1-v", scratchToggle "pavuControl") -- Pavu Control
-    , ("M4-M1-S-v", scratchToggle "alsaMixer") -- Pavu Control
+    , ("M4-M1-S-v", scratchToggle "alsaMixer") -- Alsa Mixer
 
     -- Sink
     , ("M4-r",   withFocused $ windows . W.sink) -- sink focused window

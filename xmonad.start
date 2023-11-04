@@ -35,7 +35,7 @@ redshift &
 #    nm-applet & ## if using trayer add: --sm-disable &
 #fi
 
-
+cbatticon &
 nm-applet & ## if using trayer add: --sm-disable &
 
 #/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
