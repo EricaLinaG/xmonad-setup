@@ -316,9 +316,9 @@ myTopics = [ TI "main" "" (return ())
            -- , TI "Web" "" (spawnInTopicDir "emacsn -cws common -b duckduckgo.com" >>
            --               spawnInTopicDir "discord")
 --           , TI "Yeti" "play/Yeti/yeti-stack" (spawnInTopicDir "emacsn -m Yeti")
-           , TI "Emacs" "play" (spawnInTopicDir "emacsn -m Code")
-           , TI "Emacs Dev" "play" (spawnInTopicDir "emacsn -m Dev")
-           , TI "Emacs Test" "play" (spawnInTopicDir "emacsn -m Test")
+           , TI "Emacs" "play" (spawnInTopicDir "emacsn -m  Emacs")
+           , TI "Emacs Dev" "~/Emacsn/dev" (spawnInTopicDir "emacsn -p dev -m Dev")
+           , TI "Emacs Test" "~/Emacsn/test" (spawnInTopicDir "emacsn -p test -m Test")
 --           , TI "MyQMK" "play/myqmk/users/ericgebhart" (spawnInTopicDir "emacsn -m MyQMK readme.md")
 --           , TI "QMK" "play/mycurrentqmk/users/ericgebhart" (spawnInTopicDir "emacsn -m readme.md")
 --           , TI "Elisp" "Arch-Setup/emacs-setup/elisp" (spawnInTopicDir "emacsn -m Elisp")
@@ -346,8 +346,8 @@ myTopics = [ TI "main" "" (return ())
            , TI "DownLoads" "Downloads" (spawnInTopicDir "urxvt -t Downloads" >>
                                           spawnInTopicDir "dolphin --select ~/Downloads")
  --          , TI "French" "Language/Française" (spawnInTopicDir "urxvt -t Française" >>
-                                               spawnInTopicDir "dolphin --select ~/Language/Française" >>
-                                               spawn "anki")
+--                                               spawnInTopicDir "dolphin --select ~/Language/Française" >>
+ --                                              spawn "anki")
            , TI "3D" "Projects/3d" (spawnInTopicDir "repetierHost" >>
                            spawnInTopicDir "openscad" >>
                            spawnInTopicDir "emacsn -m 3D")
@@ -357,6 +357,7 @@ myTopics = [ TI "main" "" (return ())
            , TI "Gravit" "Drawings" (spawnInTopicDir "GravitDesigner.AppImage")
              --, TI "feeds"  "" (spawn "chromium-browser --app='https://feedbin.me'")
            --, TI "stats"  "" (spawnInTopicDir "urxvt -e htop")
+           , TI "Emacs2" "play" (spawnInTopicDir "emacsn -m  Emacs")
            ]
 
 myTopicNames :: [Topic]
