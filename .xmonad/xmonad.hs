@@ -311,32 +311,33 @@ myScreenshot = "screenshot"
 myTopics :: [TopicItem]
 myTopics = [ TI "main" "" (return ())
            -- ,  TI "mail" "" (spawnInTopicDir "emacsn -e")
-           , TI "Org" "org" (spawnInTopicDir "emacsn -m ORG")
            , TI "Web" "" (spawnInTopicDir "vivaldi-stable" >>
                           spawnInTopicDir "discord")
            -- , TI "Web" "" (spawnInTopicDir "emacsn -cws common -b duckduckgo.com" >>
            --               spawnInTopicDir "discord")
 --           , TI "Yeti" "play/Yeti/yeti-stack" (spawnInTopicDir "emacsn -m Yeti")
-           , TI "Code" "play" (spawnInTopicDir "emacsn -m Code")
-           , TI "MyQMK" "play/myqmk/users/ericgebhart" (spawnInTopicDir "emacsn -m MyQMK readme.md")
-           , TI "QMK" "play/mycurrentqmk/users/ericgebhart" (spawnInTopicDir "emacsn -m readme.md")
-           , TI "Elisp" "Arch-Setup/emacs-setup/elisp" (spawnInTopicDir "emacsn -m Elisp")
-           , TI "XMonad" "Arch-Setup/xmonad-setup/.xmonad" (spawnInTopicDir "emacsn -m Xmonad xmonad.hs") -- lib/*/*.hs
-           , TI "Arch-Setup" "Arch-Setup" (spawnInTopicDir "emacsn -m Arch-Setup")
-           , TI "SPR" "play/Simple_Process_Repl" (spawnInTopicDir "emacsn -m SPR README.md")
+           , TI "Emacs" "play" (spawnInTopicDir "emacsn -m Code")
+           , TI "Emacs Dev" "play" (spawnInTopicDir "emacsn -m Dev")
+           , TI "Emacs Test" "play" (spawnInTopicDir "emacsn -m Test")
+--           , TI "MyQMK" "play/myqmk/users/ericgebhart" (spawnInTopicDir "emacsn -m MyQMK readme.md")
+--           , TI "QMK" "play/mycurrentqmk/users/ericgebhart" (spawnInTopicDir "emacsn -m readme.md")
+--           , TI "Elisp" "Arch-Setup/emacs-setup/elisp" (spawnInTopicDir "emacsn -m Elisp")
+--           , TI "XMonad" "Arch-Setup/xmonad-setup/.xmonad" (spawnInTopicDir "emacsn -m Xmonad xmonad.hs") -- lib/*/*.hs
+--           , TI "Arch-Setup" "Arch-Setup" (spawnInTopicDir "emacsn -m Arch-Setup")
+--           , TI "SPR" "play/Simple_Process_Repl" (spawnInTopicDir "emacsn -m SPR README.md")
            --, TI "RobotGirl" "play/robotgirl/" (spawnInTopicDir "emacsn -m RobotGirl")
-           , TI "Plysp" "play/plysp" (spawnInTopicDir "emacsn -m Plysp")
+--           , TI "Plysp" "play/plysp" (spawnInTopicDir "emacsn -m Plysp")
 
            -- , TI "PBR" "play/Particle_Board_REPL" (spawnInTopicDir "emacsn -m PBR")
 
-           , TI "erica.com" "play/ericatango" (spawnInTopicDir "emacsn -m erica.com")
-           , TI "eg.com" "play/EricGebhart.github.io" (spawnInTopicDir "emacsn -m eg.com")
-           , TI "tb.com" "play/tangobreath.github.io" (spawnInTopicDir "emacsn -m tb.com")
-           , TI "Closh" "play/closh" (spawnInTopicDir "emacsn -m closh")
+--           , TI "erica.com" "play/ericatango" (spawnInTopicDir "emacsn -m erica.com")
+--           , TI "eg.com" "play/EricGebhart.github.io" (spawnInTopicDir "emacsn -m eg.com")
+--           , TI "tb.com" "play/tangobreath.github.io" (spawnInTopicDir "emacsn -m tb.com")
+--           , TI "Closh" "play/closh" (spawnInTopicDir "emacsn -m closh")
            -- , TI "Mal" "play/mal" (spawnInTopicDir "emacsn -m mal")
            -- , TI "bgc-ui" "play/bgc-ui" (spawnInTopicDir "emacsn -m bgc-ui")
            -- , TI "emacs-single" "play/emacs-single" (spawnInTopicDir "emacsn -m emacs-single")
-           , TI "Xournal" "Xournal" (spawnInTopicDir "xournal")
+ --          , TI "Xournal" "Xournal" (spawnInTopicDir "xournal")
            , TI "Comm" "" (spawnInTopicDir "telegram-desktop" >>
                             spawnInTopicDir "emacsn -cews mail")
 
@@ -344,15 +345,13 @@ myTopics = [ TI "main" "" (return ())
                             spawnInTopicDir "YACReaderLibrary")
            , TI "DownLoads" "Downloads" (spawnInTopicDir "urxvt -t Downloads" >>
                                           spawnInTopicDir "dolphin --select ~/Downloads")
-           , TI "French" "Language/Française" (spawnInTopicDir "urxvt -t Française" >>
+ --          , TI "French" "Language/Française" (spawnInTopicDir "urxvt -t Française" >>
                                                spawnInTopicDir "dolphin --select ~/Language/Française" >>
                                                spawn "anki")
            , TI "3D" "Projects/3d" (spawnInTopicDir "repetierHost" >>
                            spawnInTopicDir "openscad" >>
                            spawnInTopicDir "emacsn -m 3D")
-           , TI "Music"  "Music" (spawn "mediacenter26")
            , TI "Movies" "Movies" (spawn "vlc")
-             -- , TI "calendar" "" (spawn "vivaldi --app='http://calendar.google.com'")
            , TI "Krita" "Drawings" (spawnInTopicDir "krita")
            , TI "Inkscape" "Drawings" (spawnInTopicDir "inkscape")
            , TI "Gravit" "Drawings" (spawnInTopicDir "GravitDesigner.AppImage")
