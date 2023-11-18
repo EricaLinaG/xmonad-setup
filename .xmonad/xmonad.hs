@@ -309,16 +309,16 @@ myScreenshot = "screenshot"
 --                    }
 
 myTopics :: [TopicItem]
-myTopics = [ TI "main" "" (return ())
-           -- ,  TI "mail" "" (spawnInTopicDir "emacsn -e")
-           , TI "Web" "" (spawnInTopicDir "vivaldi-stable" >>
-                          spawnInTopicDir "discord")
-           -- , TI "Web" "" (spawnInTopicDir "emacsn -cws common -b duckduckgo.com" >>
-           --               spawnInTopicDir "discord")
-           , TI "Emacs" "~/" (spawnInTopicDir "emacsn -m  Emacs")
+myTopics = [ TI "Emacs" "~/" (spawnInTopicDir "emacsn -m  Emacs")
            , TI "Emacs Dev" "~/Emacsn/dev" (spawnInTopicDir "emacsn -p dev -m Dev")
            , TI "Emacs Test" "~/Emacsn/test" (spawnInTopicDir "emacsn -p test -m Test")
 --         , TI "Stable Test" "~/" (spawnInTopicDir "emacsn -m  Stable-Test")
+           -- ,  TI "mail" "" (spawnInTopicDir "emacsn -e")
+           , TI "Web" "" (spawnInTopicDir "vivaldi-stable" >>
+                          spawnInTopicDir "discord")
+           , TI "empty" "" (return ())
+           -- , TI "Web" "" (spawnInTopicDir "emacsn -cws common -b duckduckgo.com" >>
+           --               spawnInTopicDir "discord")
            , TI "Krita" "Drawings" (spawnInTopicDir "krita")
            , TI "Inkscape" "Drawings" (spawnInTopicDir "inkscape")
         -- , TI "Comm" "" (spawnInTopicDir "telegram-desktop" >>
