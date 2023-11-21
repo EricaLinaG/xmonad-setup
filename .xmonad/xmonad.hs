@@ -961,7 +961,8 @@ selectSearchMenu =
 wsgrid = withWindowSet $ \w -> do
     let wss = W.workspaces w
         usednames = map W.tag $  wss
-        newnames = filter (\used -> (show used `notElem` (map show myTopicNames))) usednames
+        othernames = filter (\used -> (show used `notElem` (map show myTopicNames))) usednames
+        newnames = filter (/= "NSP") usednames
     gridselect workspaceGsConfig (map (\x -> (x,x)) (myTopicNames ++ newnames))
 
 -- gridselect a workspace and view it
