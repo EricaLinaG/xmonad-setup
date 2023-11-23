@@ -310,13 +310,13 @@ myScreenshot = "screenshot"
 
 myTopics :: [TopicItem]
 myTopics = [ TI "Emacs" "~/" (spawnInTopicDir "emacsn -m  Emacs")
-           , TI "Emacs Dev" "~/Emacsn/dev" (spawnInTopicDir "emacsn -p dev -m Dev")
+           , TI "empty" "" (return ())
            , TI "Emacs Test" "~/Emacsn/test" (spawnInTopicDir "emacsn -p test -m Test")
 --         , TI "Stable Test" "~/" (spawnInTopicDir "emacsn -m  Stable-Test")
            -- ,  TI "mail" "" (spawnInTopicDir "emacsn -e")
            , TI "Web" "" (spawnInTopicDir "vivaldi-stable" >>
                           spawnInTopicDir "discord")
-           , TI "empty" "" (return ())
+           , TI "Emacs Dev" "~/Emacsn/dev" (spawnInTopicDir "emacsn -p dev -m Dev")
            -- , TI "Web" "" (spawnInTopicDir "emacsn -cws common -b duckduckgo.com" >>
            --               spawnInTopicDir "discord")
            , TI "Krita" "Drawings" (spawnInTopicDir "krita")
@@ -962,7 +962,7 @@ wsgrid = withWindowSet $ \w -> do
     let wss = W.workspaces w
         usednames = map W.tag $  wss
         othernames = filter (\used -> (show used `notElem` (map show myTopicNames))) usednames
-        newnames = filter (/= "NSP") usednames
+        newnames = filter (/= "NSP") othernames
     gridselect workspaceGsConfig (map (\x -> (x,x)) (myTopicNames ++ newnames))
 
 -- gridselect a workspace and view it
